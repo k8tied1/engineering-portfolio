@@ -2,10 +2,13 @@ export const BOARD_SIZE = 9;
 export const SMALL_BOX_SIZE = 3;
 
 export class SudokuSquare {
-  constructor(
-    public value = 0,
-    public isDetermined = value !== 0, // given at board definition
-  ) {}
+value: number;
+isDetermined: boolean;
+
+constructor(value = 0, isDetermined = value !== 0) {
+  this.value = value;
+  this.isDetermined = isDetermined;
+}
 
   resetValue(): void {
     if (!this.isDetermined) this.value = 0;
